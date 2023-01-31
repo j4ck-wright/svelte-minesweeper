@@ -29,7 +29,7 @@
     <h2 class="text-xl">0:00</h2>
     <div class="game-container grid grid-cols-4 p-4" style="grid-template-columns: repeat({xLength}, minmax(0, 1fr))">
         {#each gameArray as t}
-            <Tile index={t.index} isBomb={t.isBomb} surroundingBombs={t.surroundingBombs} hidden={true}/>
+            <Tile isBomb={t.isBomb} surroundingBombs={t.surroundingBombs}/>
         {/each}
     </div>
 </div>
