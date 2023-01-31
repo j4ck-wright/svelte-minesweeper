@@ -1,10 +1,11 @@
 <script lang="ts">
     import { gridSize } from '../store.js'
 
+    //x, y, numBombs
     let gridSizes = {
-        "Beginner": [8, 8],
-        "Intermediate": [16, 16],
-        "Expert": [30, 16]
+        "Beginner": [8, 8, 10],
+        "Intermediate": [16, 16, 40],
+        "Expert": [30, 16, 99]
     }
 
 </script>
