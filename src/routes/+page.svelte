@@ -1,2 +1,23 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import { gridSize } from '../store.js';
+    import Game from '$lib/Game.svelte';
+    import GameOptions from '$lib/GameOptions.svelte';
+
+    let isPlaying = false;
+    let GRID_SIZE: number[];
+
+    gridSize.subscribe(value => {
+        GRID_SIZE = value;
+        isPlaying = GRID_SIZE[0] !== 0 // start game if valid grid size exists
+    })
+
+</script>
+
+
+{#if (!isPlaying)}
+    <GameOptions/>
+{:else}
+    <Game {GRID_SIZE}/>
+{/if}
+
+
